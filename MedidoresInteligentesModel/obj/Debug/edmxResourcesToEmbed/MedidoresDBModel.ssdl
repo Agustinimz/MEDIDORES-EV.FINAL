@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedidoresDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lecturas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="medidorTipo" Type="int" Nullable="false" />
+    <Property Name="fechaLectura" Type="datetime" />
+    <Property Name="horaLectura" Type="varchar" MaxLength="20" />
+    <Property Name="valorConsumo" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Medidor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="20" />
+    <Property Name="serie" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut" Type="varchar" MaxLength="13" />
+    <Property Name="nombre" Type="varchar" MaxLength="20" />
+    <Property Name="contraseña" Type="varchar" MaxLength="20" />
+    <Property Name="correo" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_Lecturas_Medidor">
+    <End Role="Medidor" Type="Self.Medidor" Multiplicity="1" />
+    <End Role="Lecturas" Type="Self.Lecturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medidor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Lecturas">
+        <PropertyRef Name="medidorTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedidoresDBModelStoreContainer">
+    <EntitySet Name="Lecturas" EntityType="Self.Lecturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medidor" EntityType="Self.Medidor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Lecturas_Medidor" Association="Self.FK_Lecturas_Medidor">
+      <End Role="Medidor" EntitySet="Medidor" />
+      <End Role="Lecturas" EntitySet="Lecturas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedidoresDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Lectura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="medidorTipo" Type="Int32" Nullable="false" />
+    <Property Name="fechaLectura" Type="DateTime" Precision="3" />
+    <Property Name="horaLectura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="valorConsumo" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Medidor" Relationship="Self.FK_Lecturas_Medidor" FromRole="Lecturas" ToRole="Medidor" />
+  </EntityType>
+  <EntityType Name="Medidor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="serie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Lecturas" Relationship="Self.FK_Lecturas_Medidor" FromRole="Medidor" ToRole="Lecturas" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rut" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="contraseña" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Lecturas_Medidor">
+    <End Role="Medidor" Type="Self.Medidor" Multiplicity="1" />
+    <End Role="Lecturas" Type="Self.Lectura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medidor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Lecturas">
+        <PropertyRef Name="medidorTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedidoresDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Lecturas" EntityType="Self.Lectura" />
+    <EntitySet Name="Medidors" EntityType="Self.Medidor" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Lecturas_Medidor" Association="Self.FK_Lecturas_Medidor">
+      <End Role="Medidor" EntitySet="Medidors" />
+      <End Role="Lecturas" EntitySet="Lecturas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

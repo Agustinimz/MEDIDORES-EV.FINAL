@@ -1,0 +1,12 @@
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\obj\Debug\MedidoresInteligentesModel.csproj.AssemblyReference.cache
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\obj\Debug\MedidoresInteligentesModel.csproj.CoreCompileInputs.cache
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\bin\Debug\MedidoresInteligentesModel.dll.config
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\bin\Debug\MedidoresInteligentesModel.dll
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\bin\Debug\MedidoresInteligentesModel.pdb
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\bin\Debug\EntityFramework.dll
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\bin\Debug\EntityFramework.xml
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\obj\Debug\MedidoresInteligentesModel.csproj.CopyComplete
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\obj\Debug\MedidoresInteligentesModel.dll
+D:\Agustin Muñoz\2023 - Aplicaciones Avanzadas C#\U.3\MedidoresFINVAL.EV4.imz\MedidoresInteligentesModel\obj\Debug\MedidoresInteligentesModel.pdb
